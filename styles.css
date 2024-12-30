@@ -1,0 +1,535 @@
+CSS
+/* Body Styling */
+body {
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Elemen mulai lebih ke bawah */
+  padding-top: 50px; /* Tambahkan jarak atas lebih besar */
+}
+/* Efek Animasi Muncul untuk Semua Teks */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Styling untuk Halaman 1 */
+#wedding-card-1 {
+  background: url("img/Baground.jpg") no-repeat center center;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 20px;
+  color: #8c4444;
+  display: none;
+}
+
+#wedding-card-1.active {
+  display: block;
+}
+
+#wedding-card-1 .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Jarak elemen dibagi */
+  align-items: center;
+  height: 100%;
+}
+
+/* Title Styling untuk Halaman 1 */
+#title {
+  font-family: "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #8c4444;
+  margin-top: 60px; /* Tambahkan jarak atas untuk proporsi */
+}
+
+/* Initials Styling untuk Halaman 1 */
+#initials {
+  font-family: "Georgia", serif;
+  position: relative; /* Untuk positioning bertumpuk */
+  width: 200px; /* Lebarkan agar lebih fleksibel */
+  height: 150px; /* Sesuaikan ukuran */
+  margin-top: 30px; /* Tambahkan jarak atas untuk proporsi */
+  display: flex; /* Memastikan ruang untuk kedua huruf */
+  justify-content: center; /* Posisikan huruf secara horizontal */
+  align-items: center; /* Posisikan huruf secara vertikal */
+}
+
+#left-initial,
+#right-initial {
+  font-family: "Georgia", serif;
+  position: absolute; /* Membuat huruf bebas diatur posisinya */
+  font-size: 8rem; /* Sesuaikan ukuran agar pas */
+  color: #8c4444;
+}
+
+/* Huruf I (di belakang) */
+#left-initial {
+  font-size: 11rem;
+  top: 10; /* Atur tinggi huruf I */
+  left: 50; /* Posisi horizontal */
+  z-index: 1; /* I di bawah */
+}
+
+/* Huruf S (di depan) */
+#right-initial {
+  font-family: "Georgia", serif;
+  font-size: 10rem;
+  top: -25px; /* Geser huruf S sedikit ke bawah agar tidak tertutup */
+  left: 60px; /* Geser ke kanan agar bertumpuk dengan baik */
+  z-index: 2; /* S di atas */
+}
+
+/* Names Styling untuk Halaman 1 */
+#names {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  color: #8c4444;
+  margin: 30px 50; /* Tambahkan jarak vertikal */
+}
+
+/* Date Styling untuk Halaman 1 */
+#date {
+  font-family: "Roboto", serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #8c4444;
+  margin-bottom: 30px; /* Tambahkan jarak untuk tombol */
+}
+
+/* Button Styling untuk Halaman 1 */
+.btn-primary {
+  background: linear-gradient(135deg, #8c4444, #e4a788);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styling untuk Halaman 1 */
+.btn-secondary {
+  background: linear-gradient(135deg, #8c4444, #e4a788);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Memberi jarak antar elemen */
+}
+.time-box {
+  display: flex; /* Menjadikan elemen sebagai flex container */
+  flex-direction: column; /* Mengatur elemen anak untuk tampil secara vertikal */
+  align-items: center; /* Menyelaraskan anak (angka dan label) ke tengah secara horizontal */
+  justify-content: flex-start; /* Menyelaraskan konten ke atas secara vertikal */
+  text-align: center;
+}
+
+.time-box span:first-child {
+  display: block;
+  padding: 15px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #e4a788;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 50%; /* Menjadikan elemen berbentuk lingkaran */
+}
+/* Styling untuk Halaman 2 */
+body {
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#wedding-card-2 {
+  background: url("img/Baground.jpg") no-repeat center center;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 20px;
+  color: #4c4c4c;
+  display: none;
+}
+
+#wedding-card-2.active {
+  display: block;
+}
+
+#wedding-card-2 .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Jarak elemen dibagi */
+  align-items: center;
+  height: 100%;
+}
+
+#wedding-card-2 h5 {
+  font-family: "Amiri", serif;
+  font-weight: bold;
+  color: #8c4444;
+  font-size: 1.5rem;
+}
+
+#wedding-card-2 h2 {
+  font-family: "Times New Roman", serif;
+  color: #8c4444;
+  font-size: 1.2rem;
+}
+
+#wedding-card-2 p {
+  font-family: "Roboto", serif;
+  color: #4c4c4c;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+#wedding-card-2 .btn-secondary {
+  background: linear-gradient(135deg, #8c4444, #e4a788);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+#wedding-card-2 .btn-secondary:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#wedding-card-2 h5,
+#wedding-card-2 h2,
+#wedding-card-2 p {
+  animation: fadeIn 1.2s ease-out; /* Menambahkan animasi untuk teks di Halaman 2 */
+}
+
+/* Styling untuk Halaman 3 */
+#wedding-card-3 {
+  background: url("img/Baground.jpg") no-repeat center center;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 20px;
+  color: #8c4444;
+  display: none;
+}
+
+#wedding-card-3.active {
+  display: block;
+}
+
+#wedding-card-3 .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.date-islamic {
+  font-family: "Times Now Roman", serif;
+  font-weight: bold;
+  color: #8c4444;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.date-islamic1 {
+  font-family: "Georgia", serif;
+  color: #8c4444;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.alamat-lengkap {
+  font-family: "Georgia", serif;
+  color: #8c4444;
+  font-size: 1;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.event-title {
+  font-family: "Georgia", serif;
+  color: #8c4444;
+  font-size: 1rem;
+  margin: 10px 0 5px;
+}
+
+.event-time {
+  font-family: "Georgia", serif;
+  color: #8c4444;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.qr-code img {
+  width: 120px;
+  height: 120px;
+  margin: 20px 0;
+}
+
+.location {
+  font-family: "Arial", sans-serif;
+  color: #8c4444;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #8c4444;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Styling untuk Tombol Kirim Hadiah */
+.btn-secondary {
+  background: linear-gradient(135deg, #8c4444, #e4a788);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 130px;
+  position: relative;
+  top: -20px; /* Mengangkat tombol ke atas */
+}
+
+/* Efek Hover pada Tombol Kirim Hadiah */
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.date-islamic,
+.date-islamic1,
+.alamat-lengkap,
+.event-title,
+.event-time,
+.qr-code,
+.location {
+  animation: fadeIn 1.2s ease-out; /* Menambahkan animasi untuk teks di Halaman 3 */
+}
+/* Styling untuk Halaman 4 */
+#wedding-card-4 {
+  background: url("img/Baground.jpg") no-repeat center center;
+  background-size: cover;
+  width: 400px;
+  height: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 20px;
+  color: #8c4444;
+  display: none;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden; /* Menghindari elemen keluar dari card */
+}
+
+#wedding-card-4.active {
+  display: block;
+}
+
+#wedding-card-4 .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: #8c4444;
+  overflow-y: auto; /* Scroll jika konten melebihi tinggi card */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Jarak antar gambar */
+  flex-wrap: wrap; /* Gambar menyesuaikan jika ruang sempit */
+  margin: 10px 0; /* Memberikan jarak atas dan bawah */
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#wedding-card-4 img {
+  width: 120px; /* Ukuran gambar lebih kecil agar pas */
+  height: 120px;
+  object-fit: cover; /* Gambar menyesuaikan tanpa distorsi */
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* Efek bayangan */
+}
+
+#finish-btn {
+  background: linear-gradient(135deg, #8c4444, #e4a788);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 150px;
+}
+
+#finish-btn:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #8c4444;
+}
+
+.account-number {
+  font-size: 0.9rem;
+  color: #666;
+  font-family: "Montserrat", serif;
+}
+
+.terimakasih-heading {
+  font-family: "Georgia", serif;
+  font-weight: 600;
+  color: #8c4444; /* Warna teks heading */
+  font-size: 1.8rem; /* Ukuran teks heading */
+  margin-bottom: 1rem; /* Memberi jarak bawah */
+  text-align: center; /* Teks rata tengah */
+}
+
+.terimakasih-text {
+  font-family: "Georgia", serif;
+  color: #8c4444; /* Warna teks deskripsi */
+  font-size: 1rem; /* Ukuran teks paragraf */
+  line-height: 1.6; /* Jarak antar baris */
+  margin-top: 1rem; /* Memberi jarak atas */
+  text-align: center; /* Teks rata kanan-kiri */
+}
+
+.terimakasih-text strong {
+  color: #8c4444; /* Warna teks untuk penekanan */
+  font-weight: bold; /* Menekankan teks penting */
+}
+
+/* Menata Tombol */
+.custom-btn {
+  background: linear-gradient(135deg, #8c4444, #e4a788); /* Gradien warna latar belakang */
+  border: none; /* Menghilangkan border */
+  color: white; /* Warna teks */
+  font-weight: bold; /* Menebalkan teks */
+  font-size: 0.8rem; /* Ukuran font */
+  letter-spacing: 1px; /* Spasi antar huruf */
+  padding: 10px 15px; /* Ukuran padding */
+  border-radius: 20px; /* Membuat sudut tombol lebih melengkung */
+  transition: all 0.3s ease-in-out; /* Transisi untuk hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+  width: 250px; /* Lebar tombol */
+  text-align: center; /* Teks berada di tengah */
+  cursor: pointer; /* Pointer saat hover */
+}
+
+/* Efek Hover */
+.custom-btn:hover {
+  background: linear-gradient(135deg, #e4a788, #8c4444); /* Membalik gradien saat hover */
+  transform: translateY(-2px); /* Efek tombol terangkat saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Margin top untuk memberikan jarak pada tombol */
+.mt-4 {
+  margin-top: 16px;
+}
+#wedding-card-4 h5,
+#wedding-card-4 p {
+  animation: fadeIn 1.2s ease-out; /* Menambahkan animasi untuk teks di Halaman 4 */
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .custom-btn {
+    padding: 8px 12px; /* Ukuran padding lebih kecil di layar kecil */
+    font-size: 0.85rem; /* Ukuran font lebih kecil di layar kecil */
+    width: 200px; /* Lebar tombol lebih kecil di layar kecil */
+  }
+}
